@@ -1,0 +1,47 @@
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: emailService
+
+  rabbitmq:
+    addresses: ${MS_ADDRESS}
+    template:
+      default-receive-queue: ms.email
+
+  #Email configuration
+  mail:
+    host: smtp.gmail.com
+    username: ${EMAIL_USERNAME:gamesratingaplication@gmail.com}
+    password: ${EMAIL_PASSWORD}
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+      protocol: smtp
+
+default:
+  sender: gamesratingaplication@gmail.com
+
+
+
+# Logger configuration
+logging:
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+  level:
+    org.springframework: info
+    org.hibernate: off
+
+# Server configuration
+server:
+  port: 8080
+
+
+
+
+
