@@ -1,7 +1,7 @@
-package com.email.emailservicerest.mappers;
+package com.email.emailservicerest.adapters.outbound.mappers;
 
-import com.email.emailservicerest.models.EmailModel;
-import com.email.emailservicerest.models.dtos.EmailRequest;
+import com.email.emailservicerest.applicationCore.entities.EmailModel;
+import com.email.emailservicerest.applicationCore.entities.dtos.EmailRequest;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 

@@ -1,6 +1,6 @@
-package com.email.emailservicerest.models.dtos;
+package com.email.emailservicerest.applicationCore.entities.dtos;
 
-import com.email.emailservicerest.models.enums.StatusEmail;
+import com.email.emailservicerest.applicationCore.entities.enums.StatusEmail;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;

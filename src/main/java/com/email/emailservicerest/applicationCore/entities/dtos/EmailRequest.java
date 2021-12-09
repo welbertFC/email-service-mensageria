@@ -1,4 +1,4 @@
-package com.email.emailservicerest.models.dtos;
+package com.email.emailservicerest.applicationCore.entities.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,6 +1,6 @@
-package com.email.emailservicerest.models;
+package com.email.emailservicerest.applicationCore.entities;
 
-import com.email.emailservicerest.models.enums.StatusEmail;
+import com.email.emailservicerest.applicationCore.entities.enums.StatusEmail;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

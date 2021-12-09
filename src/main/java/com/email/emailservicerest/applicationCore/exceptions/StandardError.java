@@ -1,4 +1,4 @@
-package com.email.emailservicerest.exceptions;
+package com.email.emailservicerest.applicationCore.exceptions;
 
 import lombok.Data;
 

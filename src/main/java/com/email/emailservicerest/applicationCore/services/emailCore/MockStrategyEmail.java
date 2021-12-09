@@ -1,11 +1,11 @@
-package com.email.emailservicerest.services;
+package com.email.emailservicerest.applicationCore.services.emailCore;
 
-import com.email.emailservicerest.services.email.AbstractEmailService;
+import com.email.emailservicerest.applicationCore.services.emailCore.AbstractEmailServiceStrategy;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.mail.SimpleMailMessage;
 
 @Slf4j
-public class MockEmail extends AbstractEmailService {
+public class MockStrategyEmail extends AbstractEmailServiceStrategy {
 
     @Override
     public void send(SimpleMailMessage message) {

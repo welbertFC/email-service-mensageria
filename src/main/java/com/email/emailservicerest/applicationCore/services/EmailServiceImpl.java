@@ -1,9 +1,10 @@
-package com.email.emailservicerest.services;
+package com.email.emailservicerest.applicationCore.services;
 
-import com.email.emailservicerest.models.EmailModel;
-import com.email.emailservicerest.models.enums.StatusEmail;
-import com.email.emailservicerest.repositorys.EmailRepository;
-import com.email.emailservicerest.services.email.EmailService;
+import com.email.emailservicerest.applicationCore.entities.EmailModel;
+import com.email.emailservicerest.applicationCore.entities.enums.StatusEmail;
+import com.email.emailservicerest.applicationCore.ports.EmailRepository;
+import com.email.emailservicerest.applicationCore.ports.EmailService;
+import com.email.emailservicerest.applicationCore.services.emailCore.EmailServiceStrategy;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.MailException;
@@ -13,14 +14,14 @@ import java.time.LocalDateTime;
 
 @Service
 @RequiredArgsConstructor
-public class EmailServiceImpl {
+public class EmailServiceImpl implements EmailService {
 
     @Value("${default.sender}")
     private String emailFrom;
 
     private final EmailRepository repository;
 
-    private final EmailService emailService;
+    private final EmailServiceStrategy emailServiceStrategy;
 
     public EmailModel save(EmailModel emailModel) {
         emailModel.setEmailFrom(emailFrom);
@@ -28,7 +29,7 @@ public class EmailServiceImpl {
         emailModel.setCreatedDate(LocalDateTime.now());
 
         try {
-            emailService.sendEmail(emailModel);
+            emailServiceStrategy.sendEmail(emailModel);
             emailModel.setStatusEmail(StatusEmail.SEND);
         } catch (MailException exception) {
             emailModel.setStatusEmail(StatusEmail.ERROR);

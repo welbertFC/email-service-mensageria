@@ -1,11 +1,11 @@
-package com.email.emailservicerest.services;
+package com.email.emailservicerest.applicationCore.services.emailCore;
 
-import com.email.emailservicerest.services.email.AbstractEmailService;
+import com.email.emailservicerest.applicationCore.services.emailCore.AbstractEmailServiceStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 
-public class SmtpGmailService extends AbstractEmailService {
+public class SmtpGmailServiceStrategy extends AbstractEmailServiceStrategy {
 
     @Autowired
     private JavaMailSender javaMailSender;

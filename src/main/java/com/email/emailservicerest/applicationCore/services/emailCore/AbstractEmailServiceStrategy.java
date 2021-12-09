@@ -1,10 +1,10 @@
-package com.email.emailservicerest.services.email;
+package com.email.emailservicerest.applicationCore.services.emailCore;
 
-import com.email.emailservicerest.models.EmailModel;
+import com.email.emailservicerest.applicationCore.entities.EmailModel;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 
-public abstract class AbstractEmailService implements EmailService {
+public abstract class AbstractEmailServiceStrategy implements EmailServiceStrategy {
 
     @Value("${default.sender}")
     private String emailFrom;
