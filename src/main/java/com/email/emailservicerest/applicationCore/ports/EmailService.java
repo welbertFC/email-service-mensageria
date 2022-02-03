@@ -1,8 +1,15 @@
 package com.email.emailservicerest.applicationCore.ports;
 
-import com.email.emailservicerest.applicationCore.entities.EmailModel;
+import com.email.emailservicerest.applicationCore.entities.Email;
+
+import java.util.List;
+import java.util.UUID;
 
 public interface EmailService {
 
-    EmailModel save(EmailModel emailModel);
+    Email save(Email email);
+
+    Email findByIs(UUID id);
+
+    List<Email> findAll();
 }

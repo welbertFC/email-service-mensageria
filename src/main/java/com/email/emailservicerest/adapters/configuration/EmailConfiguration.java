@@ -1,7 +1,7 @@
 package com.email.emailservicerest.adapters.configuration;
 
-import com.email.emailservicerest.applicationCore.services.emailCore.EmailServiceStrategy;
-import com.email.emailservicerest.applicationCore.services.emailCore.SmtpGmailServiceStrategy;
+import com.email.emailservicerest.applicationCore.ports.EmailServiceSend;
+import com.email.emailservicerest.adapters.outbound.email.SmtpGmailServiceStrategy;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 public class EmailConfiguration {
 
     @Bean
-    public EmailServiceStrategy emailService() {
+    public EmailServiceSend emailService() {
         return new SmtpGmailServiceStrategy();
     }
 

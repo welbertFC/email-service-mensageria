@@ -1,6 +1,6 @@
-package com.email.emailservicerest.applicationCore.services.emailCore;
+package com.email.emailservicerest.adapters.outbound.email;
 
-import com.email.emailservicerest.applicationCore.services.emailCore.AbstractEmailServiceStrategy;
+import com.email.emailservicerest.adapters.outbound.email.AbstractEmailServiceStrategy;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.mail.SimpleMailMessage;
 

@@ -1,11 +1,15 @@
 package com.email.emailservicerest.applicationCore.ports;
 
-import com.email.emailservicerest.applicationCore.entities.EmailModel;
-import org.springframework.data.mongodb.repository.MongoRepository;
+import com.email.emailservicerest.applicationCore.entities.Email;
 
+import java.util.List;
 import java.util.UUID;
 
-public interface EmailRepository  {
+public interface EmailRepository {
 
-    EmailModel save(EmailModel emailModel);
+    Email save(Email email);
+
+    Email findById(UUID id);
+
+    List<Email> findAll();
 }

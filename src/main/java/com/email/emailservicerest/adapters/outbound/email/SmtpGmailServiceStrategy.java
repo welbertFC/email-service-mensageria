@@ -1,6 +1,6 @@
-package com.email.emailservicerest.applicationCore.services.emailCore;
+package com.email.emailservicerest.adapters.outbound.email;
 
-import com.email.emailservicerest.applicationCore.services.emailCore.AbstractEmailServiceStrategy;
+import com.email.emailservicerest.adapters.outbound.email.AbstractEmailServiceStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;

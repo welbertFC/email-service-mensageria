@@ -1,19 +1,23 @@
-package com.email.emailservicerest.applicationCore.entities.dtos;
+package com.email.emailservicerest.adapters.outbound.model;
 
 import com.email.emailservicerest.applicationCore.entities.enums.StatusEmail;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.persistence.Id;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+@Document(collection =  "email")
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class EmailResponse {
+@NoArgsConstructor
+public class EmailModel implements Serializable {
 
+    @Id
     private UUID id;
 
     private String name;
@@ -28,7 +32,6 @@ public class EmailResponse {
 
     private StatusEmail statusEmail;
 
-    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
     private LocalDateTime createdDate;
 
 }

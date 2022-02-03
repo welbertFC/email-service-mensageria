@@ -1,12 +1,14 @@
 spring:
   data:
     mongodb:
+      auto-index-creation: true
       host: localhost
       port: 27017
       database: emailService
+      authentication-database: admin
 
   rabbitmq:
-    addresses: ${MS_ADDRESS}
+    addresses: ${MS_ADDRESS:amqps://uqwapock:L48kkPjm6Jc8B4MTZSc_S3w_lKOfMxGi@fox.rmq.cloudamqp.com/uqwapock}
     template:
       default-receive-queue: ms.email
 
@@ -14,7 +16,7 @@ spring:
   mail:
     host: smtp.gmail.com
     username: ${EMAIL_USERNAME:gamesratingaplication@gmail.com}
-    password: ${EMAIL_PASSWORD}
+    password: ${EMAIL_PASSWORD:uvjpjubolqjaufrp}
     port: 587
     properties:
       mail:
@@ -27,15 +29,13 @@ spring:
 default:
   sender: gamesratingaplication@gmail.com
 
-
-
 # Logger configuration
 logging:
   pattern:
     console: "%d %-5level %logger : %msg%n"
   level:
     org.springframework: info
-    org.hibernate: off
+    org.hibernate: debug
 
 # Server configuration
 server:
