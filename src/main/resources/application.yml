@@ -8,15 +8,15 @@ spring:
       authentication-database: admin
 
   rabbitmq:
-    addresses: ${MS_ADDRESS:amqps://uqwapock:L48kkPjm6Jc8B4MTZSc_S3w_lKOfMxGi@fox.rmq.cloudamqp.com/uqwapock}
+    addresses: ${MS_ADDRESS}
     template:
       default-receive-queue: ms.email
 
   #Email configuration
   mail:
     host: smtp.gmail.com
-    username: ${EMAIL_USERNAME:gamesratingaplication@gmail.com}
-    password: ${EMAIL_PASSWORD:uvjpjubolqjaufrp}
+    username: ${EMAIL_USERNAME}
+    password: ${EMAIL_PASSWORD}
     port: 587
     properties:
       mail:

@@ -12,4 +12,6 @@ public interface EmailService {
     Email findByIs(UUID id);
 
     List<Email> findAll();
+
+    void deleteAll();
 }

@@ -38,4 +38,9 @@ public class MongoEmailRepository implements EmailRepository {
         var emails = emailRepository.findAll();
         return emails.stream().map(EmailMapper::convertToEmail).collect(Collectors.toList());
     }
+
+    @Override
+    public void deleteAll() {
+        emailRepository.deleteAll();
+    }
 }

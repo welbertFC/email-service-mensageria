@@ -12,4 +12,6 @@ public interface EmailRepository {
     Email findById(UUID id);
 
     List<Email> findAll();
+
+    void deleteAll();
 }

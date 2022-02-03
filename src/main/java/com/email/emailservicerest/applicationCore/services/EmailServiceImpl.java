@@ -50,5 +50,10 @@ public class EmailServiceImpl implements EmailService {
         return repository.findAll();
     }
 
+    @Override
+    public void deleteAll() {
+        repository.deleteAll();
+    }
+
 
 }
